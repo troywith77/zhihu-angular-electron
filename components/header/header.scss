@@ -7,19 +7,23 @@
 	top: 0;
 	left: 0;
 	background-color: #f67280;
-
 	h1 {
 		font-size: 24px;
 		font-weight: normal;
 		line-height: 14px;
 		height: 40px;
 	}
-
 	#back {
 		width: 80px;
 		height: 40px;
 		position: absolute;
 		top: 0;
 		left: 0;
+		border: none;
+		outline: none;
+		background-color: #eee;
+		&:active {
+			background-color: #aaa;
+		}
 	}
 }
