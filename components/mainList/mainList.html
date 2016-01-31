@@ -1,0 +1,14 @@
+<section id="main-list">
+	<div id="pagi">
+		<button ng-click="goPrev()">前一天</button>
+		<button ng-click="goNext()">后一天</button>
+	</div>
+	<ul id='main-list-container'>
+		<li ng-repeat="item in lists" class="list-item">
+			<a ui-sref="detail" ng-click="goToDetail(item.id)">
+				<span class="item-image"><img ng-src="{{item.images[0]}}" alt=""></span>
+				<span class="item-title">{{item.title}}</span>
+			</a>
+		</li>
+	</ul>
+</section>

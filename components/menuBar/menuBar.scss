@@ -1,0 +1,22 @@
+#menu-bar {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	flex: 1;
+	position: fixed;
+	top: 40px;
+	left: 0;
+	width: 250px;
+
+	li {
+		min-height: 40px;
+		line-height: 40px;
+		text-align: center;
+		a {
+			display: block;
+			&:hover {
+				background-color: #eee;
+			}
+		}
+	}
+}

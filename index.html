@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="zhihu" ng-controller="mainCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>知乎日报</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="dist/main.min.css">
+</head>
+<body>
+	<div main-header></div>
+	<section class="container">
+
+		<div menu-bar></div>
+
+		<div ui-view></div>
+	</section>
+<!--<script>window.$ = window.jQuery = require('./js/jquery.min.js');</script>-->
+<script src="dist/angular.min.js"></script>
+<script src="dist/angular-ui-router.min.js"></script>
+<script src="dist/angular-sanitize.min.js"></script>
+<script src="http://cdn.bootcss.com/moment.js/2.11.1/moment.min.js"></script>
+<script src="./app.js"></script>
+<script src="./dist/main.min.js"></script>
+</body>
+</html>

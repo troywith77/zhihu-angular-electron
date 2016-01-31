@@ -1,0 +1,30 @@
+#main-list {
+	flex: 1;
+	margin-left: 250px;
+	height: 100%;
+	margin-top: 40px;
+
+	.list-item {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		// background-color: #eee;
+
+		.item-title {
+			margin-left: 30px;
+
+		}
+	}
+
+	ul,
+	li {
+		width: 100%;
+	}
+
+	#pagi {
+		button {
+			width: 100px;
+			height: 30px;
+		}
+	}
+}
