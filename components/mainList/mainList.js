@@ -1,39 +1,35 @@
 var mainList = angular.module('mainList', []);
 
-mainList.directive('mainList', ['getListContentService', 'getDetail', 'getHistoryContentService', function(getListContentService,getDetail,getHistoryContentService) {
+mainList.directive('mainList', ['$state', '$stateParams', 'getListContentService', 'getDetail', 'getHistoryContentService', function($state,$stateParams,getListContentService,getDetail,getHistoryContentService) {
 	return {
 		restrice: 'AE',
 		scope: {},
 		templateUrl: 'components/mainList/mainList.html',
 		replace: true,
 		link: function(scope) {
-			getListContentService.getLatestNews().then(function(data) {
+			var currentDay = $stateParams.date;
+			var realToday = moment().subtract(-1, 'days').format('YYYYMMDD');
+
+			getHistoryContentService.getHistoryNews(currentDay).then(function(data) {
 				scope.lists = data.stories;
+				scope.newsDate = data.date;
 			})
+
 			scope.goToDetail = function(id) {
-				getDetail.setDetailId(id)
+				$state.go('detail', {id: id});
 			}
 
-			var days = -1;
-			var currentDay = moment().format('YYYYMMDD');
-
-
 			scope.goPrev = function() {
-				days += 1;
-				var choseDate = moment().subtract(days, 'days').format('YYYYMMDD');
-				getHistoryContentService.getHistoryNews(choseDate).then(function(data) {
-					scope.lists = data.stories
-				})
+				var prevDay = moment(currentDay).subtract(1, 'days').format('YYYYMMDD');
+				$state.go('list', {date: prevDay});
 			}
 
 			scope.goNext = function() {
-				if(days === -1) return ;
-				days -= 1;
-				var choseDate = moment().subtract(days, 'days').format('YYYYMMDD');
-				getHistoryContentService.getHistoryNews(choseDate).then(function(data) {
-					scope.lists = data.stories
-				})
+				if(currentDay === realToday) return ;
+				var nextDay = moment(currentDay).subtract(-1, 'days').format('YYYYMMDD');
+				$state.go('list', {date: nextDay});
 			}
+
 		}
 	}
 }])

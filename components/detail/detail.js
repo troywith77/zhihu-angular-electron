@@ -1,13 +1,16 @@
 angular.module('detail', [])
-	.directive('detail', ['getDetail', '$sce', function(getDetail, $sce) {
+	.directive('detail', ['getDetail', '$sce', '$stateParams', function(getDetail, $sce, $stateParams) {
 		return {
 			restrict: 'AE',
 			scope: {},
 			templateUrl: 'components/detail/detail.html',
 			link: function(scope) {
-				getDetail.getdetail().then(function(data) {
+				var id = $stateParams.id;
+				getDetail.getdetail(id).then(function(data) {
 					scope.content = data.body;
 				})
+
+
 			}
 		}
 	}])

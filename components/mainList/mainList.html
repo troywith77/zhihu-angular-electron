@@ -4,6 +4,7 @@
 		<button ng-click="goNext()">后一天</button>
 	</div>
 	<ul id='main-list-container'>
+		<li id="date">{{newsDate}}</li>
 		<li ng-repeat="item in lists" class="list-item">
 			<a ui-sref="detail" ng-click="goToDetail(item.id)">
 				<span class="item-image"><img ng-src="{{item.images[0]}}" alt=""></span>

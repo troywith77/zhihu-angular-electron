@@ -1,0 +1,13 @@
+<section id="themes">
+	<ul>
+		<!-- <li ng-repeat="theme in themes">
+			<p>{{theme.title}}</p>
+		</li> -->
+		<li ng-repeat="theme in themes" class="list-item">
+			<a ui-sref="detail" ng-click="goToDetail(theme.id)">
+				<span class="item-image"><img ng-src="{{theme.images[0]}}" alt=""></span>
+				<span class="item-title">{{theme.title}}</span>
+			</a>
+		</li>
+	</ul>
+</section>

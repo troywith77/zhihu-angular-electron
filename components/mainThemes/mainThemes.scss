@@ -1,8 +1,6 @@
-#main-list {
-	flex: 1;
+#themes {
 	margin-left: 250px;
 	height: 100%;
-	margin-top: 40px;
 
 	.list-item {
 		display: flex;
@@ -12,7 +10,6 @@
 
 		.item-title {
 			margin-left: 30px;
-
 		}
 
 		.item-image img {

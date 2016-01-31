@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'FZ-Song';
+    src: url('dist/fonts/FZSong.TTF');
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -10,13 +15,13 @@ html{
 	left:0;
 	width:100%;
 	height:100%;
-	font-size: 18px;
 }
 
 body{
-	font: 14px/1.5 Arial, Helvetica, sans-serif;
+	font: 16px/1.5 Arial, Helvetica, sans-serif;
 	color:#000;
 	position: relative;
+	font-family: "Hiragino Sans GB","Century Gothic",system, Arial, Verdana, Tahoma,"微软雅黑";
 }
 
 a, a:visited, a:hover{
