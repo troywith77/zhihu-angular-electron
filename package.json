@@ -4,6 +4,7 @@
   "description": "Zhihu Daily",
   "main": "main.js",
   "dependencies": {
+    "electron-packager": "^5.2.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-minify-css": "^1.2.3",

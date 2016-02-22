@@ -15,6 +15,10 @@ mainThemes.directive('mainThemes', ['$state', '$stateParams', 'getThemesList', f
 			scope.goToDetail = function(id) {
 				$state.go('detail', {id: id});
 			}
+
+			scope.hasImage = function(theme) {
+				return theme.images[0] ? true : false;
+			}
 		}
 	}
 }])

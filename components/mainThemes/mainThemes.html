@@ -2,8 +2,8 @@
 	<ul>
 		<li ng-repeat="theme in themes" class="list-item">
 			<a ui-sref="detail" ng-click="goToDetail(theme.id)">
+				<img class="item-image" ng-if="hasImage(theme)" ng-src="{{theme.images[0]}}" alt="image" />
 				<span class="item-title">{{theme.title}}</span>
-				<!-- <span class="item-image"><img ng-src="{{theme.images[0]}}" alt=""></span> -->
 			</a>
 		</li>
 	</ul>

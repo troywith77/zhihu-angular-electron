@@ -2,7 +2,7 @@ var mainList = angular.module('mainList', []);
 
 mainList.directive('mainList', ['$state', '$stateParams', 'getListContentService', 'getDetail', 'getHistoryContentService', function($state,$stateParams,getListContentService,getDetail,getHistoryContentService) {
 	return {
-		restrice: 'AE',
+		restrict: 'AE',
 		scope: {},
 		templateUrl: 'components/mainList/mainList.html',
 		replace: true,
@@ -12,7 +12,7 @@ mainList.directive('mainList', ['$state', '$stateParams', 'getListContentService
 
 			getHistoryContentService.getHistoryNews(currentDay).then(function(data) {
 				scope.lists = data.stories;
-				scope.newsDate = data.date;
+				scope.newsDate = moment(data.date).format().slice(0, 10);
 			})
 
 			scope.goToDetail = function(id) {
@@ -25,7 +25,10 @@ mainList.directive('mainList', ['$state', '$stateParams', 'getListContentService
 			}
 
 			scope.goNext = function() {
-				if(currentDay === realToday) return ;
+				if(currentDay === realToday) {
+					alert('已经是最新的了~')
+					return ;
+				}
 				var nextDay = moment(currentDay).subtract(-1, 'days').format('YYYYMMDD');
 				$state.go('list', {date: nextDay});
 			}

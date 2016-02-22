@@ -1,4 +1,4 @@
-var app = angular.module('zhihu', ['ui.router', 'menuBar', 'mainList', 'detail', 'header', 'ngSanitize', 'mainThemes'])
+var app = angular.module('zhihu', ['ui.router', 'menuBar', 'mainList', 'detail', 'header', 'ngSanitize', 'mainThemes', 'asideSliderContent'])
 	.controller('mainCtrl', ['$scope', function($scope) {
 		$scope.name = '知乎日报';
 	}])
